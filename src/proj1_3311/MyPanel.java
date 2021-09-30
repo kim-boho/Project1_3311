@@ -13,8 +13,9 @@ import javax.swing.JPanel;
 @SuppressWarnings("serial")
 public class MyPanel extends JFrame implements ActionListener {
 	
-	  public Shape[] shapeArr = new Shape[6];
+	  
 	  public final int NUM_OF_SHAPES = 6;
+	  public Shape[] shapeArr = new Shape[NUM_OF_SHAPES];
 	  public boolean isSorted = false;
 	  public boolean isLoaded = false;
 	  public JPanel p;
