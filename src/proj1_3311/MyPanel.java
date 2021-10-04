@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
@@ -59,9 +60,14 @@ public class MyPanel extends JFrame implements ActionListener {
 				repaint();
 			}
 		}else if(e.getSource()==sortBt) {
-			if(!isSorted) {
+			if(!isSorted && !isLoaded) {
+				JOptionPane.showMessageDialog(null, "No shapes to sort. Load first");
+			}
+			if(!isSorted && isLoaded) {
 				isSorted = true;
 				SortingTechnique.sortShapes(shapeArr);
+				sortBt.setEnabled(false);
+				loadBt.setEnabled(false);
 				repaint();
 			}
 		}

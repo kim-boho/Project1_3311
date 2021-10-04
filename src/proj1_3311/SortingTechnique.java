@@ -5,7 +5,6 @@ import java.util.Collections;
 
 public class SortingTechnique {
 	public static void sortShapes(Shape[] shapes) {
-		Shape[] result = new Shape[shapes.length];
 		for(int i = 0; i < shapes.length; i++) {
 			int minIndex = i;
 			for(int j = i+1; j < shapes.length; j++) {
