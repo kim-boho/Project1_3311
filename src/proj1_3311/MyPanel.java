@@ -1,10 +1,8 @@
 package proj1_3311;
 
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Random;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -14,14 +12,13 @@ import javax.swing.JPanel;
 public class MyPanel extends JFrame implements ActionListener {
 	
 	  
-	  public final int NUM_OF_SHAPES = 6;
-	  public Shape[] shapeArr = new Shape[NUM_OF_SHAPES];
-	  public boolean isSorted = false;
-	  public boolean isLoaded = false;
-	  public JPanel p;
-	  public JButton loadBt;
-	  public JButton sortBt;
-	  public Color c;
+	  private final int NUM_OF_SHAPES = 6;
+	  private Shape[] shapeArr = new Shape[NUM_OF_SHAPES];
+	  private boolean isSorted = false;
+	  private boolean isLoaded = false;
+	  private JPanel p;
+	  private JButton loadBt;
+	  private JButton sortBt;
 	  
 	  public MyPanel() {
 			p = new JPanel();
