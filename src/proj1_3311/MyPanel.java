@@ -44,8 +44,7 @@ public class MyPanel extends JFrame implements ActionListener {
 		    p.add(sortBt);
 		    loadBt.setBounds(150, 20, 150, 30);
 		    sortBt.setBounds(300, 20, 150, 30);
-
-	  }
+		    }
 	  
 	public static void main(String[] args) {
 		new MyPanel();
@@ -56,27 +55,9 @@ public class MyPanel extends JFrame implements ActionListener {
 		// TODO Auto-generated method stub
 		if(e.getSource()==loadBt) {
 			if(!isSorted) {
-				int x = 50; int y = 50;
-				for(int i=0; i<NUM_OF_SHAPES; i++) {
-					ShapeFactory shFactory = new ShapeFactory();
-					Shape newShape;
-					if(pickRandomShape() == 0) {
-						//create rectangle
-						newShape = shFactory.getShape("Rectangle");
-						newShape.setCoordinate(x, y);
-					} else if(pickRandomShape() == 1) {
-						//create square.
-						newShape = shFactory.getShape("Square");
-						newShape.setCoordinate(x, y);
-					} else {
-						//create circle.
-						newShape = shFactory.getShape("Circle");
-						newShape.setCoordinate(x, y);
-					}
-					shapeArr[i] = newShape;
-					x += 80;
-					y += 80;
-				}
+				Controller.createShapeArray(NUM_OF_SHAPES, shapeArr);
+				//Set new shapes to shapeArr
+				
 				isLoaded = true;
 				repaint();
 			}
@@ -89,11 +70,6 @@ public class MyPanel extends JFrame implements ActionListener {
 		}
 	}
 	
-	private int pickRandomShape() {
-		Random r = new Random();
-		return r.nextInt(3);
-		//To pick shape randomly. 0 = rectangle, 1 = square, 2 = circle.
-	}
 	
     public void paint(Graphics g){
 		if(isLoaded || isSorted) {
