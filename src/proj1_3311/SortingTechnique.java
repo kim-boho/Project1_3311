@@ -5,7 +5,7 @@ import java.util.Collections;
 
 public class SortingTechnique {
 	public static void sortShapes(Shape[] shapes) {
-		for(int i = 0; i < shapes.length; i++) {
+		for(int i = 0; i < shapes.length-1; i++) {
 			int minIndex = i;
 			for(int j = i+1; j < shapes.length; j++) {
 				if((shapes[minIndex]).compareTo(shapes[j]) > 0) {
